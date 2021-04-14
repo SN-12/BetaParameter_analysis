@@ -1,0 +1,17 @@
+This is BitSimulator, a nanonetwork simulator.
+
+Installation: ./configure && make.  Optionally, make install and make check.
+
+(To (re)generate configure, type "autoreconf --install --force".)
+(If you have just installed pkg-config, regenerate configure, as above.)
+
+Authors and copyright 2017-2019: Dominique Dhoutaut, Thierry Arrabal, Eugen Dedu.
+  (affiliated to University of Franche-Comte, France / FEMTO-ST Institute)
+
+Contributors:
+  Dominique Dhoutaut (dominique.dhoutaut@univ-fcomte.fr)
+  Thierry Arrabal (thierry.arrabal@univ-fcomte.fr)
+  Eugen Dedu (eugen.dedu@univ-fcomte.fr)
+  Florian Büther (buether@itm.uni-luebeck.de)
+
+License: GPL3 or later (at your option), see COPYING file.

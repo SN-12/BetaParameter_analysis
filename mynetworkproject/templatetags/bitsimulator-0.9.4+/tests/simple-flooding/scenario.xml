@@ -1,0 +1,37 @@
+
+<scenario>
+	<name>
+	  Simple flooding test
+	</name>
+	<description>
+	  Simple flooding test
+	</description>
+	<routing agent="SimpleFlooding"/>
+	<world sizeX_nm="6000000" sizeY_nm="0" sizeZ_nm="6000000" nodeStartupTime_ns="0">
+	  <genericNodes count="1000" positionRNGSeed="1"/>
+	</world>
+
+	<nanoWireless backoffRNGSeed="1" defaultBackoffWindowWidth="10000" defaultBeta="1000"  pulseDuration_fs="100" communicationRange_nm="900000" communicationRangeSmall_nm="250000" maxCollisionBufferPackets="100" maxConcurrentReceptions="10" minimumIntervalBetweenSends="1000" minimumIntervalBetweenReceiveAndSend="1000"/>
+	<routingAgentsConfig>
+	  <SimpleFlooding/>
+	</routingAgentsConfig>
+	
+	<applicationAgentsConfig>
+	  <CBRGenerator>
+	    <flow flowId="7" srcId="3" dstId="10" port="3001"packetSize="1003" interval_ns="100"repetitions="3" startTime_ns="6000000" beta="1000"/>
+
+	  </CBRGenerator>
+	</applicationAgentsConfig>
+	
+	<logSystem>
+	  <NodeInfo suffix="nodeInfo" output=""/>
+	  <WorldInfo suffix="worldInfo" output="cout"/>
+	  <EventsLog suffix="events" output="file" io="smartLog"/>
+	  <EstimationLog suffix="histo" output="file"/>
+	  <SummarizeLog suffix="sumup" output="cout"/>
+	</logSystem>
+
+	
+
+	
+</scenario>

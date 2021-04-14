@@ -1,0 +1,19 @@
+* Major changes in version 0.9.5 (...)
+- New command line parameter hcdPathWidth
+- Move all source files to src/ directory
+- Split softwareagents.{cpp,h} in several files in src/agents/ directory
+- Move utils->output: LogOutput, LogSystem, OutputLineFormat, LogItem
+- Make some events use the simpler and less powerful CallMethodEvent, and
+  move them in their own file instead of being together in a single file
+- Add renderer.cpp/h for OpenGL
+
+* Major changes in version 0.9.4 (25 04 2019)
+- Implement deviation routing
+- Rename some output files
+- -D command line option is optional, and is . by default
+- Separate command line options for both programs
+- Fix backoff included twice in the waiting time window
+- Fix major bug in sleep
+
+* Changes in version 0.9.3 (16 01 2019)
+...

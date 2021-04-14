@@ -1,0 +1,47 @@
+<scenario>
+  <name>Test scenario</name>
+
+  <description>
+    Uses: SLRRouting, CBRGenerator, deden, multi-hop, anchors+random
+      nodes, stddev, collisions+ignore, area
+    TODO: test also other routing protocols (pure flooding, backoff
+      flooding, proba flooding)
+    Will not test: VisualTracer, file renaming
+  </description>
+
+  <world sizeX_nm="3000000" sizeY_nm="0" sizeZ_nm="3000000" nodeStartupTime_ns="0">
+    <node id="0" posX_nm="0" posY_nm="0" posZ_nm="0" anchor="true" beaconStartTime_us="0"/>
+    <node id="1" posX_nm="0" posY_nm="0" posZ_nm="3000000" anchor="true" beaconStartTime_us="0"/>
+    <genericNodes count="1000" positionRNGSeed="1"/>
+    <area shape="ellipse" x_nm="1500000" y_nm="0" z_nm="1500000"
+          sizeX_nm="3000000" sizeY_nm="0" sizeZ_nm="500000"
+          distribution="uniform" nodesCount="100"/>
+  </world>
+
+  <nanoWireless backoffRNGSeed="1" defaultBackoffWindowWidth="10000"
+                defaultBeta="1000" pulseDuration_fs="100"
+                communicationRange_nm="500000" communicationRangeSmall_nm="250000"
+                communicationRangeStandardDeviation_nm="25000"
+                maxConcurrentReceptions="5"
+                minimumIntervalBetweenSends="1000" minimumIntervalBetweenReceiveAndSend="1000"/>
+
+  <routingAgentsConfig>
+    <SLRRouting/>
+  </routingAgentsConfig>
+
+  <applicationAgentsConfig>
+    <CBRGenerator>
+      <flow flowId="7" srcId="2" dstId="12" port="3001"
+            packetSize="1000" interval_ns="300000"
+            repetitions="1" startTime_ns="6000000" beta="0"/>
+    </CBRGenerator>
+  </applicationAgentsConfig>
+
+  <logSystem baseName="results">
+    <NodeInfo suffix="nodeInfo" output=""/>
+    <WorldInfo suffix="worldInfo" output="cout"/>
+    <EventsLog suffix="events" output="file" io="smartLog"/>
+    <EstimationLog suffix="histo" output="file"/>
+    <SummarizeLog suffix="sumup" output="cout"/>
+  </logSystem>
+</scenario>

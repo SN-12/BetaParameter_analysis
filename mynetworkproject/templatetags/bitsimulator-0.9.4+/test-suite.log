@@ -1,0 +1,268 @@
+===========================================
+   bitsimulator 0.9.4+: ./test-suite.log
+===========================================
+
+# TOTAL: 1
+# PASS:  0
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  1
+# XPASS: 0
+# ERROR: 0
+
+.. contents:: :depth: 2
+
+FAIL: tests/test1.sh
+====================
+
+[36;1mbitsimulator 0.9.4+[0m
+add world ...
+Distribution: uniform
+-- uniform distribution -- nodesCount:100
+adding subarea ...
+- RECTANGLE global(0,0,0) local(0,0,0) size: 3000000 x 0 x 3000000
+  UNIFORM distribution. NodesCount: 1000  RNGSeed: 1
+  - ELLIPSE global(1500000,0,1500000) local(1500000,0,1500000) size: 3000000 x 0 x 500000
+    UNIFORM distribution. NodesCount: 100  RNGSeed: 1
+*** WARNING *** no "io" attribute in child of <logSystem> element
+*** WARNING *** no "io" attribute in child of <logSystem> element
+*** WARNING *** no "io" attribute in child of <logSystem> element
+*** WARNING *** no "io" attribute in child of <logSystem> element
+*** WARNING *** no "binaryPayloadRNGSeed" attribute in "nanoWireless" element in ./scenario.xml
+[36;1m================================================[0m
+[36;1mScenario: [0mTest scenario
+
+    Uses: SLRRouting, CBRGenerator, deden, multi-hop, anchors+random
+      nodes, stddev, collisions+ignore, area
+    TODO: test also other routing protocols (pure flooding, backoff
+      flooding, proba flooding)
+    Will not test: VisualTracer, file renaming
+  
+[36;1mScenario parameters:[0m
+  directory:            .
+  configuration file:   ./scenario.xml
+  log system base name: results
+  world X size:         3000000 nm
+  world Y size:         0 nm
+  world Z size:         3000000 nm
+
+[36;1mNodes:[0m
+  startup time:         0 fs
+
+[36;1mNanoWireless:[0m
+  communication range:                    500000 nm
+  communication range (small):            250000 nm
+  communication range standard deviation: 25000 nm
+  default beta:                           1000
+  pulse duration:                         100 fs
+  backoff RNG seed:                       1
+  backoff window width:                   10000
+  maximum concurrent receptions:          5
+  binary payload RNG seed:                0
+
+[36;1mRouting agent: [0m
+  SLRRouting
+
+[36;1mAnchors: [0m
+  id 0 (0, 0, 0)
+  id 1 (0, 0, 3000000)
+
+[36;1mRandom generic nodes:[0m
+   number of auto-generated nodes:   1000
+   RNG seed used for positions:      1
+
+[36;1mD1DensityEstimator:[0m
+   grow rate:                        2
+   number of tics per round:         1
+   maximum number of rounds:         20
+   minimum packets for termination:  100
+[36;1m================================================[0m
+Initializing LogSystem ...
+  redirecting NodeInfo  to /dev/null
+  [smartLog] redirecting EventsLog to ./results-events.log
+  [iostream] redirecting EstimationLog to ./results-histo.log
+  redirecting SummarizeLog to cout
+  redirecting RoutingInfoLog to cout
+Creating World ...
+  World size [ 3000000, 0, 3000000 ]
+    anchor 0
+    anchor 1
+getNodesPositionsVector ********************** RECTANGLE
+getNodesPositionsVector ********************** ELLIPSE
+  random nodes generated: 1100
+  neighbours grid size: 7 1 7
+  min/avg/max number of neighbours: 15/88/144
+  nb of hops on x/y/z: 6.0/0.0/6.0
+[36;1mConstant Bit Rate (CBR) Flows: [0m
+  flow 7  [src:2, dst:12, packetSize:1000, interval:300000000000, repetitions:1, startTime:6000000000000, beta:1000]
+
+Registering a specific backoff for packet type 3 : [ 0, 1000 ]
+Registering a specific backoff for packet type 4 : [ 0, 900000000 ]
+Registering a specific backoff for packet type 5 : [ 0, 100000 ]
+Registering a specific backoff for packet type 6 : [ 0, 4000000000 ]
+*** Simulation start ***
+Node 0 initialization ...
+  processed up to 0 ( inf events/s )
+  processed up to 31220208 ( 231481 events/s )
+  processed up to 151747292884 ( 317460 events/s )
+  processed up to 171743897561 ( 267380 events/s )
+  processed up to 181546393395 ( 236967 events/s )
+ anchor 0 on node 0 sent a beacon
+  processed up to 200128772964 ( 294985 events/s )
+ anchor 1 on node 1 sent a beacon
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1005(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1011(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 910(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1005(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1011(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1005(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1011(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 910(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 910(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1005(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1011(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 910(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1011(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 910(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1011(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1005(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 910(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 910(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 910(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 446(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 910(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 910(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 12(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 12(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 12(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1023(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1023(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 931(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 12(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 826(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1023(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 931(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 826(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 12(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1023(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 12(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 826(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 596(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 12(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 826(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1023(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1023(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 12(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 931(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 826(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 12(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1023(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 931(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1023(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 12(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 716(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 640(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 1029(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 826(14,14,-1) packet (flow) 0(7)
+ DESTINATION REACHED on node 931(14,14,-1) packet (flow) 0(7)
+all events processed (fin at 6300000000000)
+*** Simulation end ***
+*** finished computation at Sat Jan  2 22:06:38 2021
+*** elapsed time: 2.255s
+*** 590368 events processed
+*** 261804 events/s
+*** maximum events list depth 74875
+Destroying World ...
+ Total packets received: 10
+ Total packets collided: 0
+ Total bits corrupted  : 0
+ SLR Routing:: forwarded packets: 103
+ SLR Routing:: forwarded beacons: 2202
+Agents having exported info: 1102
+averageNeighboursReal:             88.6558
+averageNeighboursEstimated:        65.9891 ( 25.5671% )
+
+averageDifferenceEstimated:        18.68
+maxDifferenceBelowAverage:         -53.9891
+maxDifferenceOverAverage:          48.0109
+
+averageDiff:                       22.6512
+maxDiffBelowAverage:               -47
+maxDiffAboveAverage:               0
+
+totalPacketsSent:                   2179
+
+writing estimation error distribution file
+../.././tests/expected-events.log results-events.log differ: byte 616, line 11
+FAIL tests/test1.sh (exit status: 1)
+

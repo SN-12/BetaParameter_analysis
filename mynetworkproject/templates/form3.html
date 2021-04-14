@@ -1,0 +1,328 @@
+{% load static %}
+{% load other %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.min.js@2.8.0"></script>
+
+</head>
+<body>
+<div class="row">
+    <div class="col-md-2" id="radio_click" style="padding-top: 10px;">
+        <div class="form-group">
+            <div class="card" style="margin-bottom: 10px">
+                <div class="card-header">
+                    Protocol
+                </div>
+                <ul class="list-group list-group-flush">
+                    <select id="protocol" class="browser" disabled>
+                        <option value="1" selected="selected">Pure flooding routing</option>
+                        <option value="10">SLR routing</option>
+                    </select>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Beta
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta50" value=50
+                                                                                              class="form-check-input"
+                                                                                              name="optradio" checked>50
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta80" value=80
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">80
+                    </li>
+
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta100" value=100
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">100
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta120" value=120
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">120
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta150" value=150
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">150
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta200" value=200
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">200
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta400" value=400
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">400
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta500" value=500
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">500
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta550" value=550
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">550
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta1000" value=1000
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">1000
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta1500" value=1500
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">1500
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta2000" value=2000
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">2000
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta5000" value=5000
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">5000
+                    </li>
+
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta20000" value=20000
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">20000
+                    </li>
+                    <li class="list-group-item" style="height: 30px; padding-top: 0px"><input type="checkbox"
+                                                                                              id="beta100000"
+                                                                                              value=100000
+                                                                                              class="form-check-input"
+                                                                                              name="optradio">100000
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card" style="margin-bottom: 10px">
+            <div class="card-header">
+                Source ID
+            </div>
+            <ul class="list-group list-group-flush">
+                <select id="srcIDSelect" class="browser">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected="selected">3</option>
+                </select>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Repititon ID
+            </div>
+            <ul class="list-group list-group-flush">
+                <select id="repetitionIDSelect" class="browser">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected="selected">3</option>
+                </select>
+
+
+            </ul>
+        </div>
+        <div style="padding-left: 20%;padding-top: 20px">
+            <button class="btn btn-primary mb-2" id="addDataset">Add Curves</button>
+        </div>
+    </div>
+
+    <div class="col-md-10">
+        <div style="width:100%">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<script>
+    window.chartColors = {
+        red: 'rgb(255,97,131)',
+        green: 'rgb(75, 192, 192)',
+        blue: 'rgb(54, 162, 235)',
+        yellow: 'rgb(255, 205, 86)',
+        green: 'rgb(75, 192, 192)',
+        orange: 'rgb(255, 159, 64)',
+        purple: 'rgb(153, 102, 255)',
+        grey: 'rgb(201, 203, 207)'
+    };
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var colorNames = Object.keys(window.chartColors);
+
+
+    data = []
+
+    var i;
+
+    var j;
+    for (i = 0; i < Array.from({{ y }}).length; i++) {
+        var colorName = colorNames[data.length % colorNames.length];
+
+        var point = []
+        var d;
+        for (j = 0; j < Array.from(({{ y }})[i]).length; j++) {
+            d = {'x': ({{ x }})[i][j], 'y': ({{ y }})[i][j]}
+            point.push(d)
+        }
+
+        var newDataset = {
+            label: 'beta  ' + Array.from({{ z }})[i],
+            backgroundColor: window.chartColors[colorName],
+            borderColor: window.chartColors[colorName],
+            data: point.map(o => ({x: o.x, y: o.y})),
+            fill: false
+        };
+
+        data.push(newDataset)
+    }
+
+    {#xLables = point.reduce((acc, v) => acc.includes(v.x) ? acc : acc.concat(v.x), []).sort();#}
+    var config = {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ({{ x }})[0],
+            datasets: data
+        },
+
+        // Configuration options go here
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Propagation Delay Chart'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                }
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'time(femto second)'
+                    },
+                    type: 'linear'
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'nodes'
+                    }
+                }]
+            }
+        }
+    }
+    window.myLine = new Chart(ctx, config);
+
+
+    document.getElementById('addDataset').addEventListener('click', function () {
+        var temp = document.getElementById("srcIDSelect").value;
+
+        var srcId = temp + ',';
+
+        var temp2 = document.getElementById("repetitionIDSelect").value;
+
+        var repetition = temp2 + ',';
+
+        var beta = ''
+
+        if (document.getElementById('beta50').checked) {
+            beta += '50' + ',';
+        }
+        if (document.getElementById('beta80').checked) {
+            beta += '80' + ',';
+        }
+
+        if (document.getElementById('beta100').checked) {
+            beta += '100' + ',';
+        }
+
+        if (document.getElementById('beta120').checked) {
+            beta += '120' + ',';
+        }
+
+        if (document.getElementById('beta150').checked) {
+            beta += '150' + ',';
+        }
+        if (document.getElementById('beta200').checked) {
+            beta += '200' + ',';
+        }
+
+        if (document.getElementById('beta400').checked) {
+            beta += '400' + ',';
+        }
+
+        if (document.getElementById('beta500').checked) {
+            beta += '500' + ',';
+        }
+
+        if (document.getElementById('beta550').checked) {
+            beta += '550' + ',';
+        }
+
+        if (document.getElementById('beta1000').checked) {
+            beta += '1000' + ',';
+        }
+
+        if (document.getElementById('beta1500').checked) {
+            beta += '1500' + ',';
+        }
+
+        if (document.getElementById('beta2000').checked) {
+            beta += '2000' + ',';
+        }
+        if (document.getElementById('beta5000').checked) {
+            beta += '5000' + ',';
+        }
+
+        if (document.getElementById('beta20000').checked) {
+            beta += '20000' + ',';
+        }
+
+        if (document.getElementById('beta100000').checked) {
+            beta += '100000' + ',';
+        }
+
+        console.log('/form3?repetition=' + repetition + '&src_id=' + srcId + '&beta=' + beta)
+        window.location = '/form3?repetition=' + repetition + '&src_id=' + srcId + '&beta=' + beta
+    });
+
+
+</script>
+
+</body>
+</html> 
